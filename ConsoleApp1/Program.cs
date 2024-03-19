@@ -180,3 +180,4 @@ namespace ConsoleApplication1{
         }
     }
 }
+//проблема хз в чём вот и думай
