@@ -20,17 +20,11 @@ public class Solution {
                 }
             }
         }
+
+        return 666;
     }
 
     static void Main(){
-        StateMachine.InvokeTransition("string",parameters)
-    }
-    
-    
-}
 
-static class StateMachine{
-    static void InvokeTransition(string x)
-    {
     }
 }
