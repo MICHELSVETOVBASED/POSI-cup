@@ -22,8 +22,9 @@ class Viewer{
     }
 
     public virtual int Row{ get; set; }
-    public virtual int Price{ get; set; }
-    public virtual double NumberOfTickets{ get; set; } = 0;
+    public virtual double Price{ get; set; }
+    public virtual int NumberOfTickets{ get; set; } = 0;
+    public virtual int AfterAdditionalRow{ get; set; };
 
 }
 
@@ -36,13 +37,18 @@ class Regular : Viewer{
             }
         }
     }
-    public override int Price{
+    public override double Price{
         get => base.Row;
         set{
-            double ValueGetter = value;
-            if (Row < 200){
-                
+            double ValueSetter = value;
+            if (Row <= 200){
+                ValueSetter *= base.Row;
             }
+            else{
+                ValueSetter *= 1.20;
+            }
+
+            base.Price = ValueSetter;
         } 
     }
     public override int NumberOfTickets{ get; set; }
