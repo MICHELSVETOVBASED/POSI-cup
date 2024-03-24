@@ -1,12 +1,19 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+
+
 
 namespace Examplify{
     internal class Program{
         internal class Car {}
         internal class Truck : Car {}
+        public void AssignBrandToVehicle(Vehicle vehicle, string brandName)
+        {
+            vehicle.Brand = brandName;
+        }
         public static void Main(string[] args){
             void Swap(int[] array, int index1, int index2){
                 array[index1] ^= array[index2];
@@ -29,7 +36,10 @@ namespace Examplify{
             Truck truck4 = (Truck)truck1;
             Truck truck5 = (Truck)car2;
             Car car6 = (Truck)car2;
-            
+            Car xdd;
+            bool on = false;
+            Console.WriteLine(on ? "ConsoleYeah" : "Console GRAYCEN");
+
 
 
         }
@@ -37,6 +47,21 @@ namespace Examplify{
         public delegate void Action<in T>(T obj);
 
         
-    }
-}
 
+    }
+    public class Vehicle
+    {
+        public string Brand { get; set; }
+    }
+
+    public class Car : Vehicle
+    {
+        public int Doors { get; set; }
+    }
+
+    public class Bike : Vehicle
+    {
+        public bool HasPedals { get; set; }
+    }
+
+}
